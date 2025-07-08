@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fjällräven Bag - Tas Premium untuk Wanita Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f4f8 100%);
+        }
+        
+        .price-cut {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .price-cut::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            right: 0;
+            height: 2px;
+            background: #ef4444;
+            transform: rotate(-5deg);
+        }
+        
+        .product-gallery img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .product-gallery img:hover {
+            transform: scale(1.03);
+        }
+        
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-enter {
+            opacity: 0;
+        }
+        
+        .modal-enter .modal-content {
+            transform: scale(0.9);
+        }
+        
+        .modal-leave-to {
+            opacity: 0;
+        }
+        
+        .modal-leave-to .modal-content {
+            transform: scale(0.9);
+        }
+        
+        .notification-slide {
+            animation: slideIn 0.5s forwards, slideOut 0.5s forwards 3s;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateY(0); }
+            to { transform: translateY(100%); }
+        }
+        
+        .floating-cta {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .feature-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://images.seeklogo.com/logo-png/19/2/fjallraven-logo-png_seeklogo-193782.png" alt="Fjarr raven Logo" class="h-10 mr-2">
+                <h1 class="text-xl font-bold text-gray-800">FJARR RAVEN</h1>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium">Fitur</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimoni</a>
+                <a href="#gallery" class="text-gray-700 hover:text-blue-600 font-medium">Galeri</a>
+                <a href="#order" class="text-gray-700 hover:text-blue-600 font-medium">Pesan Sekarang</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+                <a href="#features" class="py-2 text-gray-700 hover:text-blue-600">Fitur</a>
+                <a href="#testimonials" class="py-2 text-gray-700 hover:text-blue-600">Testimoni</a>
+                <a href="#gallery" class="py-2 text-gray-700 hover:text-blue-600">Galeri</a>
+                <a href="#order" class="py-2 text-gray-700 hover:text-blue-600">Pesan Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-12 md:py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                    FJÄLLRÄVEN BAG<br>
+                    <span class="text-blue-600">Tas Premium untuk Wanita Modern</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-6">Desain elegan yang cocok untuk menemani aktivitas harian Anda, baik untuk bekerja, sekolah, maupun traveling.</p>
+                
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-3">
+                        <i class="fas fa-check-circle mr-1"></i> GRATIS ONGKIR
+                    </div>
+                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> GARANSI 1 TAHUN
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="flex items-center">
+                        <span class="text-3xl font-bold text-red-600">Rp 284.000</span>
+                        <span class="price-cut text-xl text-gray-500 ml-3">Rp 1.699.000</span>
+                        <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-bold ml-3">83% OFF</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                    <a href="#order" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-shopping-cart mr-2"></i> BELI SEKARANG
+                    </a>
+                    <a href="#features" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-6 rounded-lg border border-blue-600 text-center transition duration-300">
+                        <i class="fas fa-info-circle mr-2"></i> LIHAT DETAIL
+                    </a>
+                </div>
+                
+                <div class="mt-6 flex items-center text-sm text-gray-600">
+                    <div class="flex items-center mr-4">
+                        <i class="fas fa-eye mr-1 text-blue-600"></i>
+                        <span id="view-counter">1,258</span> dilihat
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-box-open mr-1 text-blue-600"></i>
+                        <span id="stock-counter">27</span> tersisa
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-1/2 relative">
+                <img src="https://cdn.orderonline.id/uploads/images_4576611737473841856.png" alt="Fjällräven Bag" class="w-full max-w-md mx-auto floating-cta">
+                <div class="absolute -bottom-4 -right-4 bg-white shadow-lg rounded-full p-3 hidden md:block">
+                    <div class="bg-blue-100 text-blue-800 rounded-full p-3 text-center">
+                        <div class="text-xs font-bold">PROMO HARI INI</div>
+                        <div id="countdown" class="text-xl font-bold">23:59:59</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solution Section -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Masalah yang Sering Dihadapi Wanita Modern</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-times text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Tas Biasa Tidak Nyaman</h3>
+                            <p class="text-gray-600">Tas dengan bahan biasa mudah rusak, tidak ergonomis, dan membuat bahu sakit saat digunakan dalam waktu lama.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Solusi Fjällräven Bag</h3>
+                            <p class="text-gray-600">Dengan bahan berkualitas tinggi dan desain ergonomis, tas ini nyaman digunakan seharian tanpa membuat bahu sakit.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-times text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Tidak Cukup Ruang Penyimpanan</h3>
+                            <p class="text-gray-600">Tas biasa seringkali tidak memiliki cukup kompartemen untuk menyimpan semua kebutuhan harian dengan rapi.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Solusi Fjällräven Bag</h3>
+                            <p class="text-gray-600">Dengan banyak kompartemen dan kantong khusus, semua barang bisa disimpan dengan rapi dan mudah diakses.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-times text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Tidak Tahan Air</h3>
+                            <p class="text-gray-600">Tas biasa cepat basah saat terkena hujan, membuat dokumen dan barang elektronik berisiko rusak.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-check text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Solusi Fjällräven Bag</h3>
+                            <p class="text-gray-600">Dilengkapi dengan bahan tahan air, tas ini melindungi barang-barang Anda dari hujan dan percikan air.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Keunggulan Fjällräven Bag</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tas premium dengan berbagai fitur yang dirancang khusus untuk memenuhi kebutuhan wanita modern</p>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="feature-icon bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Bahan Berkualitas Tinggi</h3>
+                    <p class="text-gray-600">Terbuat dari bahan Vinylon F yang kuat, tahan air, dan mudah dibersihkan. Tas ini dirancang untuk bertahan dalam berbagai kondisi.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="feature-icon bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tshirt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ergonomis & Nyaman</h3>
+                    <p class="text-gray-600">Tali bahu yang lebar dan empuk mengurangi tekanan pada bahu, membuatnya nyaman digunakan seharian bahkan dengan beban berat.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="feature-icon bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-boxes text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Banyak Kompartemen</h3>
+                    <p class="text-gray-600">Memiliki banyak kantong dan kompartemen untuk menyimpan laptop, buku, alat tulis, botol minum, dan kebutuhan lainnya dengan rapi.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="feature-icon bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-umbrella text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Tahan Air</h3>
+                    <p class="text-gray-600">Bahan khusus yang tahan air melindungi barang-barang Anda dari hujan dan percikan air, menjaga dokumen dan elektronik tetap aman.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="feature-icon bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-palette text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Desain Stylish</h3>
+                    <p class="text-gray-600">Tersedia dalam berbagai pilihan warna yang stylish dan modern, cocok untuk berbagai kesempatan dan gaya berpakaian.</p>
+                </div>
+                
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="feature-icon bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-award text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Garansi 1 Tahun</h3>
+                    <p class="text-gray-600">Kami memberikan garansi 1 tahun untuk produk ini, menunjukkan komitmen kami terhadap kualitas dan kepuasan pelanggan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Galeri Produk</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Lihat detail dan keindahan Fjällräven Bag dari berbagai angle</p>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="product-gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="cursor-pointer" onclick="openModal('https://cdn.orderonline.id/uploads/images_6204071737473843214.png')">
+                    <img src="https://cdn.orderonline.id/uploads/images_6204071737473843214.png" alt="Fjällräven Bag - Tampak Depan" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://cdn.orderonline.id/uploads/images_1337341737473842524.png')">
+                    <img src="https://cdn.orderonline.id/uploads/images_1337341737473842524.png" alt="Fjällräven Bag - Tampak Samping" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://fjallraven.co.id/cdn/shop/files/kanken_laptop_17_23525-560_a_main_fjr_1_7d2f32a5-4516-4834-b89a-7b4bc8e25ebb.webp?v=1744082154')">
+                    <img src="https://fjallraven.co.id/cdn/shop/files/kanken_laptop_17_23525-560_a_main_fjr_1_7d2f32a5-4516-4834-b89a-7b4bc8e25ebb.webp?v=1744082154" alt="Fjällräven Bag - Tampak Atas" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://cdn.orderonline.id/uploads/images_5489261737473842967.png')">
+                    <img src="https://cdn.orderonline.id/uploads/images_5489261737473842967.png" alt="Fjällräven Bag - Fitur Kompartemen" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://down-id.img.susercontent.com/file/id-11134207-7rbk1-m8fm6ducp6gybe.webp')">
+                    <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk1-m8fm6ducp6gybe.webp" alt="Fjällräven Bag - Tampak Belakang" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://id-live-01.slatic.net/p/915f494e51e3ee94f858f865b6ff3718.jpg')">
+                    <img src="https://id-live-01.slatic.net/p/a2be9bf07a2a3bd334494db9d186655f.jpg" alt="Fjällräven Bag - Pilihan Warna" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+            </div>
+            
+            <!-- Image Modal -->
+            <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 hidden">
+                <div class="relative max-w-4xl w-full p-4">
+                    <button onclick="closeModal()" class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300">&times;</button>
+                    <img id="modalImage" src="" alt="" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Testimoni jujur dari pelanggan yang sudah menggunakan Fjällräven Bag</p>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">A</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Anita - Ibu Rumah Tangga</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Sangat nyaman digunakan untuk aktivitas sehari-hari. Anak saya yang SD juga suka pakai ke sekolah. Bahan kuat dan tahan lama."</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">D</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Dina - Guru</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Tas ini sangat praktis untuk membawa buku dan laptop ke sekolah. Bahunya tidak sakit meski dipakai seharian. Desainnya juga stylish!"</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">R</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Rani - Mahasiswa</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Kompartemennya banyak banget, semua barang bisa tertata rapi. Warna pinknya cantik dan tidak mudah kotor. Worth it banget harganya!"</p>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-800 w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">S</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sari - Travel Blogger</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Sempurna untuk traveling! Ringan tapi kuat, tahan air, dan bisa memuat banyak barang. Sudah menemani saya ke 5 negara tanpa masalah."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Apakah tas ini original Fjällräven?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-600 hidden">
+                        Ya, produk ini 100% original dari Fjällräven dengan kualitas terbaik. Kami adalah authorized reseller resmi di Indonesia.
+                    </div>
+                </div>
+                
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Berapa lama pengiriman biasanya?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-600 hidden">
+                        Untuk wilayah Jabodetabek biasanya 1-2 hari kerja. Luar Jabodetabek 2-5 hari kerja tergantung lokasi. Kami menggunakan ekspedisi terpercaya seperti JNE, J&T, dan SiCepat.
+                    </div>
+                </div>
+                
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Apakah ada garansi?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-600 hidden">
+                        Ya, kami memberikan garansi 1 tahun untuk produk ini terhadap cacat produksi. Garansi tidak termasuk kerusakan akibat penggunaan tidak wajar.
+                    </div>
+                </div>
+                
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Bagaimana cara perawatan tas ini?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-600 hidden">
+                        Tas ini mudah dibersihkan cukup dengan lap basah. Untuk noda membandel bisa menggunakan sabun lembut. Hindari mesin cuci dan pengering. Simpan di tempat kering saat tidak digunakan.
+                    </div>
+                </div>
+                
+                <div class="mb-4 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Apakah bisa cod atau bayar di tempat?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-600 hidden">
+                        Kami menerima pembayaran via transfer bank, e-wallet (OVO, Dana, Gopay), dan kartu kredit. Untuk COD hanya tersedia di beberapa wilayah tertentu dengan tambahan biaya. Silakan cek ketersediaan saat checkout.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-12 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Pesan Fjällräven Bag Sekarang</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-6 md:p-8">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.seeklogo.com/logo-png/19/2/fjallraven-logo-png_seeklogo-193782.png" alt="Fjarr raven Logo" class="h-12 mr-3">
+                            <h3 class="text-xl font-bold text-gray-800">FJÄLLRÄVEN BAG</h3>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-red-600">Rp 284.000</span>
+                                <span class="price-cut text-xl text-gray-500 ml-3">Rp 1.699.000</span>
+                                <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs font-bold ml-3">83% OFF</span>
+                            </div>
+                            <div class="text-green-600 font-medium mt-1">
+                                <i class="fas fa-check-circle mr-1"></i> GRATIS ONGKIR KHUSUS HARI INI
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-bold text-gray-800 mb-2">Pilihan Warna Tersedia:</h4>
+                            <div class="flex space-x-2">
+                                <div class="w-8 h-8 rounded-full bg-pink-400 border-2 border-white shadow"></div>
+                                <div class="w-8 h-8 rounded-full bg-blue-500 border-2 border-white shadow"></div>
+                                <div class="w-8 h-8 rounded-full bg-black border-2 border-white shadow"></div>
+                                <div class="w-8 h-8 rounded-full bg-red-500 border-2 border-white shadow"></div>
+                                <div class="w-8 h-8 rounded-full bg-green-500 border-2 border-white shadow"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="flex items-center mr-4">
+                                    <i class="fas fa-box-open mr-1 text-blue-600"></i>
+                                    <span id="stock-counter-2">27</span> tersisa
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-1 text-blue-600"></i>
+                                    <span id="countdown-2">23:59:59</span> tersisa
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        <span class="font-bold">PROMO KHUSUS:</span> Pembayaran via transfer hari ini dapat GRATIS ONGKIR ke seluruh Indonesia!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-lock mr-2"></i>
+                            <span>Data Anda aman dan tidak akan disalahgunakan</span>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-gray-50 p-6 md:p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Isi Form Pemesanan</h3>
+                        
+                        <!-- OrderOnline Embed Form -->
+                        <div class="ooef">
+                            <form class="orderonline-embed-form" data-username="rosa" data-product-slug="fjallraven-bag-promo" data-product-id="64881f365900ad04060215e2" id="oo-embed-form-fjallraven-bag-promo-2422" data-origin="orderonline">
+                                <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                            </form>
+                        </div>
+                        <script>
+                            if (typeof xLogError != 'function') {
+                                var xLogError = function (error) {
+                                    var req = new XMLHttpRequest();
+                                    var payload = JSON.stringify({
+                                        url: document.location.href,
+                                        line: error.line,
+                                        stack: error.stack
+                                    });
+                                    var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                                    req.open('POST', 'https://api.orderonline.id/log', true);
+                                    req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                    req.send(params);
+                                };
+                            }
+                            try {
+                                if (typeof xEmbedScript != 'function') {
+                                    var xEmbedScript = function () {
+                                        !function(w, d, e, v, id, t, s) {
+                                            if (d.getElementById(id)) return;
+                                            t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                            s = d.getElementsByTagName(e)[0];
+                                            s.parentNode.insertBefore(t, s);
+                                        }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                                    };
+                                }
+                                if (typeof xEmbedInit != 'function') {
+                                    var xEmbedInit = function (w, n) {
+                                        if (w.ooe) return;
+                                        n = w.ooe = function() {
+                                            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                        };
+                                        if (!w._ooe) w._ooe = n;
+                                        n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                                    };
+                                }
+                                xEmbedInit(window);
+                                ooe('setup', 'redirect', 'https://rosa.orderonline.id');
+                                ooe('init', '5f17ee268dcbdb1b55498d78', '64881f365900ad04060215e2', '64881f365900ad04060215e3', 'oo-embed-form-fjallraven-bag-promo-2422', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false});
+                                if (!window.jQuery) {
+                                    !function(w, d, e, v, id, t, s) {
+                                        if (d.getElementById(id)) return;
+                                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                        t.addEventListener('load', xEmbedScript);
+                                        s = d.getElementsByTagName(e)[0];
+                                        s.parentNode.insertBefore(t, s);
+                                    }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                                } else {
+                                    xEmbedScript();
+                                }
+                            } catch (e) {
+                                xLogError(e);
+                                throw e;
+                            }
+                        </script>
+                        <!-- End OrderOnline Embed Code -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.seeklogo.com/logo-png/19/2/fjallraven-logo-png_seeklogo-193782.png" alt="Fjarr raven Logo" class="h-8 mr-2">
+                        <h3 class="text-xl font-bold">FJARR RAVEN</h3>
+                    </div>
+                    <p class="text-gray-400">Tas premium berkualitas tinggi untuk wanita modern. Desain ergonomis dengan bahan terbaik.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Fitur Produk</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimoni</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Galeri</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white transition">Pesan Sekarang</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone-alt mr-2"></i> +62 85731163544
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i> cs@fjarrraven.id
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i> Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Fjarr Raven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA (Mobile) -->
+    <div class="fixed bottom-4 right-4 z-50 md:hidden">
+        <a href="#order" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center transition transform hover:scale-105">
+            <i class="fas fa-shopping-cart mr-2"></i> BELI
+        </a>
+    </div>
+
+    <!-- New Order Notification -->
+    <div id="newOrderNotification" class="fixed bottom-4 left-4 right-4 bg-white rounded-lg shadow-xl z-50 p-4 max-w-md mx-auto hidden notification-slide">
+        <div class="flex justify-between items-start">
+            <div class="flex">
+                <div class="bg-blue-100 text-blue-800 w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3" id="customerInitial">R</div>
+                <div>
+                    <div class="font-medium text-gray-800">Pesanan baru diterima!</div>
+                    <div class="text-sm text-gray-600"><span id="customerName">Rina</span> dari <span id="customerCity">Bandung</span> membeli Fjällräven Bag</div>
+                </div>
+            </div>
+            <button onclick="closeNotification()" class="text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Image Modal
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = imageSrc;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+            const diff = midnight - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown').textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('countdown-2').textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Dynamic Counters
+        function updateCounters() {
+            // Random viewers between 1200-1500
+            const viewers = Math.floor(Math.random() * 300) + 1200;
+            document.getElementById('view-counter').textContent = viewers.toLocaleString();
+            
+            // Decreasing stock (starts at 27)
+            const stock = Math.max(0, 27 - Math.floor(Math.random() * 5));
+            document.getElementById('stock-counter').textContent = stock;
+            document.getElementById('stock-counter-2').textContent = stock;
+        }
+        
+        setInterval(updateCounters, 5000);
+        updateCounters();
+
+        // Fake New Order Notification
+        const cities = ['Jakarta', 'Bandung', 'Surabaya', 'Medan', 'Makassar', 'Semarang', 'Yogyakarta', 'Bali'];
+        const names = ['Rina', 'Dewi', 'Sari', 'Ani', 'Lisa', 'Maya', 'Nia', 'Tina'];
+        
+        function showNewOrder() {
+            const notification = document.getElementById('newOrderNotification');
+            const initial = document.getElementById('customerInitial');
+            const name = document.getElementById('customerName');
+            const city = document.getElementById('customerCity');
+            
+            // Random data
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            
+            initial.textContent = randomName.charAt(0);
+            name.textContent = randomName;
+            city.textContent = randomCity;
+            
+            notification.classList.remove('hidden');
+            
+            // Auto hide after 5 seconds if not closed manually
+            setTimeout(() => {
+                if (!notification.classList.contains('hidden')) {
+                    notification.classList.add('hidden');
+                }
+            }, 5000);
+        }
+        
+        function closeNotification() {
+            document.getElementById('newOrderNotification').classList.add('hidden');
+        }
+        
+        // Show first notification after 3 seconds
+        setTimeout(showNewOrder, 3000);
+        
+        // Show subsequent notifications every 30-60 seconds
+        setInterval(() => {
+            if (Math.random() > 0.3) { // 70% chance to show
+                showNewOrder();
+            }
+        }, 30000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
